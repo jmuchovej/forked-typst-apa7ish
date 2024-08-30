@@ -1,0 +1,49 @@
+{
+  "image": "ghcr.io/jmuchovej/devcontainers/typst:latest",
+  "name": "Typst",
+  // "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Typst LSP and renderer.
+        "myriad-dreamin.tinymist",
+        // Useful extensions for dev experience
+        "shardulm94.trailing-spaces", // Highlights straight whitespace
+        "stkb.rewrap" // Enables word-wrap on comments
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "editor.formatOnSave": true,
+        "[typst]": {
+          "editor.formatOnSave": true
+        },
+        "tinymist.formatterMode": "typstyle",
+        "files.associations": {
+          "*.typ": "typst"
+        },
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils": {
+      "installZsh": true,
+      "username": "vscode",
+      "upgradePackages": true
+	},
+	"ghcr.io/devcontainers/features/common-utils:2": {
+		"installZsh": true,
+		"configureZshAsDefaultShell": true,
+		"upgradePackages": true,
+		"username": "automatic",
+		"userUid": "automatic",
+		"userGid": "automatic"
+	},
+	"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+		"moby": true,
+		"installDockerBuildx": true,
+		"version": "latest",
+		"dockerDashComposeVersion": "v2"
+	},
+	"ghcr.io/dhoeric/features/act:1": {}
+  },
+}
